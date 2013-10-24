@@ -11,10 +11,20 @@ NOTE: all sizes in sectors
 
 Sample output:
 
-    ~/fsfinder# python3 fsfinder.py ~/lab2.img   
-    found boot sector at sector 0  
-    found NTFS size=32065 at sector 63  
-    found boot sector at sector 21053  
-    found NTFS size=32065 at sector 32128  
-	found boot sector at sector 32130  
+
+    root@svm18027:~/fsfinder# python3 fsfinderinder.py lab2.img
+    found at sector 0:
+        boot sector
+    found at sector 63:
+        NTFS size=32065
+    found allt sector 21053:
+        boot sector
+    found at sector 32128:
+        NTFS size=32065
+    foundund at sector 32130:
+        boot sector
+    
+    root@svm18027:~/fsfinder# python3 fsfinderinder.py /dev/xvda1 
+    found at sector 2:
+        Linux totalblocks=9175040 blksize=4096 size=35840
 
