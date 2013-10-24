@@ -31,7 +31,7 @@ with open(sys.argv[1], "rb") as f:
 
         #did we find something?
         if found:
-            print ("found {} at sector {}".format(found,sector))
+            print ("found at sector {}:\n\t{}".format(sector,found))
 
         sector += 1
 
