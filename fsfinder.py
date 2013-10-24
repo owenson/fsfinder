@@ -5,6 +5,8 @@ import sys
 
 if len(sys.argv) != 2:
     print("Usage: fsfinder.py imageordisk")
+    print ()
+    print("all sizes in sectors")
     sys.exit(1)
 
 sector = 0
@@ -27,7 +29,7 @@ with open(sys.argv[1], "rb") as f:
         if sec[0x38] == 0x53 and sec[0x39]==0xef: #linux
             blockcnt=struct.unpack("<I", sec[4:8])[0]
             blksizeraw=1024<<struct.unpack("<I",sec[0x18:0x18+4])[0]
-            found = "Linux totalblocks={} blksize={} size={}".format(blockcnt, blksizeraw, (blockcnt*blksizeraw)//(1024*1024))
+            found = "Linux totalblocks={} blksize={} size={}".format(blockcnt, blksizeraw, (blockcnt*blksizeraw)//512)
 
         #did we find something?
         if found:
